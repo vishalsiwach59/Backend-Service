@@ -1,4 +1,4 @@
-from backendservice.databaseModels.database import engine, sessionmaker
+from setup_db import engine, sessionmaker
 from backendservice.databaseModels.models import Base  # Import your models
 from backendservice.auth.seed_permissions import seed_permissions
 
