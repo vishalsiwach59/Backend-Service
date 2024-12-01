@@ -37,7 +37,7 @@ This backend service is designed for managing user authentication, organization 
    git clone https://github.com/vishalsiwach59/Backend-Service.git
    cd backend-service
    ```
-2. start virtualenv:
+2. activate virtualenv:
     ```bash
     source venv/bin/activate 
     ```
@@ -48,7 +48,7 @@ This backend service is designed for managing user authentication, organization 
     ```bash
     docker-compose up -d 
     ```
-2. setub tables and RBAC roles
+2. setup tables and RBAC roles
     ```bash
     python create_tables.py
     ```
