@@ -9,8 +9,17 @@ from backendservice.auth.routes import router as auth_router
 from backendservice.organization.routes import router as org_router
 from backendservice.clusters.routes import router as clusters_router
 from backendservice.deployments.routes import router as deployments_router
-
+# from backendservice.auth.seed_permissions import seed_permissions
 app = FastAPI()
+
+# @app.on_event("startup")
+# def on_startup():
+#     # Run the permission seeding function when the app starts
+#     db = database.SessionLocal()
+#     try:
+#         seed_permissions(db)
+#     finally:
+#         db.close()
 
 app.include_router(auth_router, prefix="/auth", tags=["Authentication"])
 app.include_router(org_router, prefix="/organizations", tags=["Organizations"])

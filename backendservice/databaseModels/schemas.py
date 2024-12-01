@@ -56,3 +56,7 @@ class DeploymentCreate(BaseModel):
     gpu: int
     priority: int
 
+class Permission(BaseModel):
+    role: str
+    resource: str
+    action: str

@@ -11,8 +11,8 @@ class User(Base):
     organization_id = Column(Integer, ForeignKey("organizations.id"))
     role = Column(String, default="Viewer")  # Admin, Developer, Viewer
     
-    # Adding the reverse relationship to Organization
     organization = relationship("Organization", back_populates="users")
+
 
 class Organization(Base):
     __tablename__ = "organizations"
@@ -55,3 +55,9 @@ class Deployment(Base):
 
     cluster = relationship("Cluster", back_populates="deployments")
 
+class Permission(Base):
+    __tablename__ = "permissions"
+    id = Column(Integer, primary_key=True, index=True)
+    role = Column(String, nullable=False)  # Admin, Developer, Viewer
+    resource = Column(String, nullable=False)  # e.g., 'clusters', 'deployments'
+    action = Column(String, nullable=False)  # e.g., 'create', 'read', 'update', 'delete'
